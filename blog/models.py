@@ -11,7 +11,7 @@ from django.urls import reverse
 # Creating Post Model -
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField(len=60)
+    content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
    # need author having relation with Users table in Django Database
     author = models.ForeignKey(User,on_delete = models.CASCADE)
