@@ -12,7 +12,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=100)
     sub_heading = models.CharField(max_length=200, default="")
-    content = models.TextField(max_length=200)
+    content = models.TextField(max_length=2000)
     date_posted = models.DateTimeField(default=timezone.now)
    # need author having relation with Users table in Django Database
     author = models.ForeignKey(User,on_delete = models.CASCADE)
