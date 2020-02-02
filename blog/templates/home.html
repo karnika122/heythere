@@ -19,10 +19,33 @@
               <br>
               <h6 class="card-subtitle mb-2 text-muted">By {{p.author}} at {{p.date_posted |date:'F d, Y'}} <br/>
               </h6>
-              
-              <p class="card-text" style='white-space:pre'>{{p.content}}</p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                <p class="card-text" style='white-space:pre'>{{p.content}}</p>
+              </div>
+              </div>
+              </div>
             </div>
         </div>
+        <script>   
+          function myFunction() {
+         var dots = document.getElementById("dots");
+         var moreText = document.getElementById("more");
+         var btnText = document.getElementById("myBtn");
+       
+         if (dots.style.display === "none") {
+           dots.style.display = "inline";
+           btnText.innerHTML = "Read more"; 
+           moreText.style.display = "none";
+         } else {
+           dots.style.display = "none";
+           btnText.innerHTML = "Read less"; 
+           moreText.style.display = "inline";
+         }
+       }
+       </script>  
+
         <br/>
 
         {% endfor %}
@@ -47,5 +70,4 @@
       {% endif %}
 
     {% endif %}
-{% endblock %}        
-      
+{% endblock %}     
