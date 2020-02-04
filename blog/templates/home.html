@@ -5,37 +5,23 @@
         <br/>
         <br/>
         {% for p in posts  %}
-        <div class="card"style="width: 45rem;">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-1">
-                      <img class="rounded-circle" style="width: 45px;height:45px" src="{{ p.author.profile.image.url }}">
-                    </div>
-                    <div  class="col-md-11">
-                      <h4><a class="card-title" href="{% url 'post-detail' p.id %}">{{p.title}}</a></h4>
-                    </div>
-                    <br>
-                    <h6 class="card-subtitle mb-2 text-muted">By {{p.author}} at {{p.date_posted |date:'F d, Y'}} 
-                      <br/>
-                    </h6>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <p class="card-text" style='white-space:pre'><textarea cols="90" rows="5" style="overflow:scroll;">{{p.content}}</textarea></p>
-
-                        </div>
-                      </div>
-                    </div>
+        <div class="card">
+          
+            <div class="card-body">
+              <div class="row">
+                  <div class="col-md-1">
+                    <img class="rounded-circle" style="width: 45px;height:45px" src="{{ p.author.profile.image.url }}">
                   </div>
-                </div>
+                  <div  class="col-md-11">
+                    <h4><a class="card-title" href="{% url 'post-detail' p.id %}">{{p.title}}</a></h4>
+                  </div>
               </div>
+              <br>
+              <h6 class="card-subtitle mb-2 text-muted">By {{p.author}} at {{p.date_posted |date:'F d, Y'}} <br/>
+              </h6>
+              <p class="card-text" style='white-space:pre'>{{p.content}}</p>
             </div>
-          </div>
         </div>
-        
         <br/>
 
         {% endfor %}
